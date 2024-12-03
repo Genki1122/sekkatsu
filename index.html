@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>節活スタートアップチェックシート</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: linear-gradient(to bottom, #fdf2f8, #ffffff);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #d53f8c;
+            margin-bottom: 30px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .hint {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #d53f8c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b83280;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>節活スタートアップチェックシート</h1>
+        <form>
+            <div>
+                <label for="name">①名前（ニックネーム可）</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label>②年齢層</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="radio" id="age-10s" name="age" value="10代">
+                        <label for="age-10s">10代</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="radio" id="age-20s" name="age" value="20代">
+                        <label for="age-20s">20代</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="radio" id="age-30s" name="age" value="30代">
+                        <label for="age-30s">30代</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="radio" id="age-40s" name="age" value="40代">
+                        <label for="age-40s">40代</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="radio" id="age-50s" name="age" value="50代以上">
+                        <label for="age-50s">50代以上</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="occupation">③職業（任意）</label>
+                <select id="occupation" name="occupation">
+                    <option value="">選択してください</option>
+                    <option value="会社員">会社員</option>
+                    <option value="自営業">自営業</option>
+                    <option value="公務員">公務員</option>
+                    <option value="学生">学生</option>
+                    <option value="主婦/主夫">主婦/主夫</option>
+                    <option value="無職">無職</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+            <div>
+                <label>④居住形態</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="living-alone" name="living" value="一人暮らし">
+                        <label for="living-alone">一人暮らし</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="living-couple" name="living" value="夫婦">
+                        <label for="living-couple">夫婦</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="living-family" name="living" value="3人以上家族">
+                        <label for="living-family">3人以上家族</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="living-other" name="living" value="その他">
+                        <label for="living-other">その他</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="financial-issue">⑥現在感じている金銭的な問題</label>
+                <p class="hint">（例：月末にお金が足りなくなる、貯金ができない、無駄遣いが多いなど）</p>
+                <textarea id="financial-issue" name="financial-issue" rows="3" required></textarea>
+            </div>
+            <div>
+                <label for="learning-topic">⑦節約活動に関して特に学びたいテーマ</label>
+                <p class="hint">(もしあれば教えてください)</p>
+                <textarea id="learning-topic" name="learning-topic" rows="3"></textarea>
+            </div>
+            <div>
+                <label for="savings-goal">⑧達成したい具体的な節約目標</label>
+                <p class="hint">（例：年間で50万円貯金する、電気代を20%削減するなど）</p>
+                <textarea id="savings-goal" name="savings-goal" rows="3" required></textarea>
+            </div>
+            <button type="submit">投稿する</button>
+        </form>
+    </div>
+</body>
+</html>
